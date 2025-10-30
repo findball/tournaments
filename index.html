@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TOURNAMENTS</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #101910;
+      color: #fff;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 20px 0; /* ✅ Added padding */
+      background: #00b34a;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      margin-bottom: 25px;
+    }
+
+    .tournament {
+      background: #081108;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .tournament img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .meta {
+      color: #aaa;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .desc {
+      font-size: 15px;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      background: #16a34a;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #15803d;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>TOURNAMENTS</h1>
+
+  <div id="tournament-list"></div>
+
+  <script>
+    // 🏆 EASY TO EDIT — just change or add items here
+    const tournaments = [
+      {
+        name: "Laliga-2025",
+        date: "Nov 12, 2025",
+        venue: "El Classico",
+        desc: "A 3-day knockout tournament for U-18 and senior teams. Prizes for Best Goalkeeper, Top Scorer, and Fair Play Team.",
+        image: "laliga.jpg",
+        phone: "7560948414",
+      },
+      {
+        name: "Champions Cup 2025",
+        date: "Dec 10, 2025",
+        venue: "East Kallada Turf",
+        desc: "A one-day 5s tournament featuring 16 district teams. Cash prize and trophies for winners.",
+        image: "laliga.jpg",
+        phone: "8078123456",
+      },
+      {
+        name: "Street Masters 2025",
+        date: "Nov 20, 2025",
+        venue: "Kollam City Ground",
+        desc: "A fast-paced 5s tournament with knockout rounds and local rivalries. Limited slots available.",
+        image: "laliga.jpg",
+        phone: "7034123456",
+      }
+    ];
+
+    const container = document.getElementById("tournament-list");
+
+    tournaments.forEach(t => {
+      container.innerHTML += `
+        <div class="tournament">
+          <img src="${t.image}" alt="${t.name}">
+          <h2>${t.name}</h2>
+          <div class="meta">Date: ${t.date} • Venue: ${t.venue}</div>
+          <div class="desc">${t.desc}</div>
+          <a href="tel:${t.phone}">
+            <button class="btn">Register Team</button>
+          </a>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+</html>
